@@ -1,0 +1,4 @@
+# File: Stable source text across native platforms.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

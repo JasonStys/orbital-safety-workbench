@@ -1,0 +1,19 @@
+# File: Exclude private/generated execution state without hiding authored fixtures.
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+.pytest_cache/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+node_modules/
+web/dist/
+test-results/
+playwright-report/
+build/
+dist/
+*.spec
+*.sqlite3*

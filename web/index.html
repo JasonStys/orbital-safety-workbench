@@ -1,0 +1,224 @@
+<!doctype html>
+<!-- Website shell by Jason Stys. Regions: navigation, controls, visualization, evidence, help.
+     IDs and files are inventoried with exact lines in docs/CODE_INDEX.md. No inline executable code. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Civilian orbit replay and evidence workbench by Jason Stys. Educational, offline-first, transparent about uncertainty."
+    />
+    <title>Orbital Safety Workbench · Jason Stys</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workbench</a>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Orbital Safety Workbench home"
+        ><span class="brand-icon">◎</span> ORBITAL<span> / SAFETY WORKBENCH</span></a
+      >
+      <nav aria-label="Main">
+        <a href="#evidence">Evidence</a><a href="#help">How it works</a
+        ><a href="https://github.com/JasonStys/orbital-safety-workbench" rel="noreferrer"
+          >Source ↗</a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <div>
+          <p class="eyebrow">SPACE SYSTEMS / SCIENTIFIC REPLAY</p>
+          <h1>A clearer view of<br /><em>orbital motion.</em></h1>
+          <p class="lede">
+            Explore archived orbits. Compare fictional close approaches.<br />Understand the
+            evidence—and its limits.
+          </p>
+        </div>
+        <div class="intro-note">
+          <span class="status-dot"></span> LOCAL · NO LIVE FEED
+          <p>Built by <a href="https://github.com/JasonStys" rel="noreferrer">Jason Stys ↗</a></p>
+          <span>Educational analysis, not flight software.</span>
+        </div>
+      </div>
+      <div class="notice">
+        <strong>Replay, not prediction.</strong> Archived elements are anchored to their original
+        epoch. Synthetic traces are fictional. No collision probability or maneuver advice is
+        produced.
+      </div>
+      <section class="toolbar" aria-label="Scenario controls">
+        <label
+          >SCENARIO<select id="scenario" disabled>
+            <option value="iss-archive">ISS · archived orbit</option>
+            <option value="synthetic-crossing">Crossing histories · synthetic</option>
+            <option value="synthetic-separated">Separated histories · synthetic</option>
+          </select></label
+        >
+        <label
+          >REPLAY WINDOW<select id="minutes" disabled>
+            <option value="30">30 minutes</option>
+            <option value="60" selected>60 minutes</option>
+            <option value="120">120 minutes</option>
+          </select></label
+        >
+        <button id="reload" class="secondary">Reload evidence</button>
+        <p id="status" role="status" aria-live="polite">Loading reviewed scenario…</p>
+      </section>
+      <div id="error" role="alert" hidden></div>
+      <div class="workspace">
+        <section class="viewport" aria-labelledby="scene-title">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">REFERENCE-SPHERE VIEW</p>
+              <h2 id="scene-title">Archived ISS / TEME</h2>
+            </div>
+            <button id="reset" class="dark-button">Reset camera</button>
+          </div>
+          <div
+            id="scene"
+            role="img"
+            aria-label="Interactive three-dimensional reference-sphere visualization"
+          >
+            <p id="webgl-note" hidden>
+              3D unavailable. The XY projection, charts and numeric evidence remain fully usable
+              below.
+            </p>
+          </div>
+          <div class="scene-foot">
+            <span id="scene-mode">HISTORICAL REPLAY</span
+            ><span>Drag to orbit · scroll to zoom</span>
+          </div>
+          <div class="timeline">
+            <button id="play" class="dark-button" disabled aria-label="Play replay">▶ Play</button
+            ><label for="time"
+              >Elapsed <output id="elapsed" role="timer" aria-live="off">00:00</output></label
+            ><input
+              type="range"
+              id="time"
+              min="0"
+              max="3600"
+              step="1"
+              value="0"
+              disabled
+              aria-label="Elapsed replay seconds"
+            /><span id="duration">60:00</span>
+          </div>
+        </section>
+        <aside class="readout" aria-labelledby="readout-title">
+          <p class="eyebrow">OBJECT TELEMETRY / REPLAY</p>
+          <h2 id="readout-title">State at cursor</h2>
+          <label for="object">Selected object</label
+          ><select id="object" disabled></select>
+          <div class="metric">
+            <span>Speed</span><strong id="speed">—</strong
+            ><small>km/s · inertial vector magnitude</small>
+          </div>
+          <div class="metric">
+            <span>Radial height</span><strong id="height">—</strong
+            ><small>km above reference sphere · not geodetic</small>
+          </div>
+          <dl class="coordinates">
+            <dt>X / km</dt>
+            <dd id="x">—</dd>
+            <dt>Y / km</dt>
+            <dd id="y">—</dd>
+            <dt>Z / km</dt>
+            <dd id="z">—</dd>
+          </dl>
+          <p id="frame-note" class="fine">Positions in TEME; sphere is a reference, not a map.</p>
+        </aside>
+      </div>
+      <div class="chart-grid">
+        <section class="card">
+          <p class="eyebrow">GEOMETRY</p>
+          <h2>XY projection</h2>
+          <svg
+            id="projection"
+            viewBox="0 0 600 280"
+            role="img"
+            aria-label="Equal-scale XY orbital projection"
+          >
+            <title>Equal-scale XY projection in kilometers</title>
+          </svg>
+          <p class="fine">
+            Equal axis scales; Z omitted. Numeric values are available at the cursor.
+          </p>
+        </section>
+        <section class="card">
+          <p class="eyebrow">SELECTED OBJECT</p>
+          <h2>Radial height over replay</h2>
+          <svg
+            id="chart"
+            viewBox="0 0 600 130"
+            role="img"
+            aria-label="Radial height over elapsed time"
+          >
+            <title>Radial height above reference sphere in kilometers</title>
+          </svg>
+          <p id="chart-summary" class="fine">Loading height range…</p>
+          <h3>Pairwise screening</h3>
+          <div id="events" class="events"></div>
+        </section>
+      </div>
+      <section id="evidence" class="card evidence">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">REPRODUCIBLE BY DESIGN</p>
+            <h2>Trace every result to its source.</h2>
+          </div>
+          <div class="downloads">
+            <a id="json" href="/api/report" download>JSON ↓</a
+            ><a id="csv" href="/api/report?format=csv" download>CSV ↓</a
+            ><a id="html" href="/api/report?format=html" download>HTML ↓</a>
+          </div>
+        </div>
+        <dl id="provenance"></dl>
+        <details>
+          <summary>Scientific assumptions & limitations</summary>
+          <ul id="limits"></ul>
+        </details>
+      </section>
+      <section id="help" class="help">
+        <div>
+          <p class="eyebrow">GETTING STARTED</p>
+          <h2>Small controls.<br />Explicit assumptions.</h2>
+        </div>
+        <div>
+          <h3>1 / Choose a scenario</h3>
+          <p>
+            The ISS replay uses a public May 2024 mean-element record and SGP4. The two synthetic
+            cases are fictional, sampled histories—not orbital dynamics models.
+          </p>
+          <h3>2 / Inspect the evidence</h3>
+          <p>
+            Scrub elapsed time, select an object, or play at 60 replay seconds per real second. The
+            chart, coordinates and speed follow the same cursor. Closest approaches search every
+            linear segment, not just sampled timestamps.
+          </p>
+          <h3>3 / Export a reproducible record</h3>
+          <p>
+            JSON and HTML include full histories, units, frame, source hash, model and limitations.
+            CSV provides unit-labeled samples linked to the same run ID. Results are not uploaded.
+            Only scenario/window preferences stay in your browser.
+          </p>
+          <p>
+            <strong>Not a safety decision tool.</strong> No live catalog, covariance, collision
+            probability, operational alerts, targeting or maneuver planning. Consult qualified
+            orbital analysts for real operations.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>ORBITAL SAFETY WORKBENCH · v1.0</span
+      ><span
+        >Created by <a href="https://github.com/JasonStys" rel="noreferrer">Jason Stys</a> ·
+        <a href="https://github.com/JasonStys/orbital-safety-workbench/issues" rel="noreferrer"
+          >Help & contact ↗</a
+        ></span
+      >
+    </footer>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

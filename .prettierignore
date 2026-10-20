@@ -1,0 +1,14 @@
+# File: Exclude generated and non-JavaScript formatting domains.
+.venv
+.runtime
+node_modules
+web/dist
+dist
+build
+test-results
+playwright-report
+requirements*.lock
+package-lock.json
+docs/CODE_INDEX.md
+docs/FILE_CATALOG.md
+docs/reports/generated
