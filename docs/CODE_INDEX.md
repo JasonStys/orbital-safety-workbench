@@ -305,6 +305,11 @@ Line numbers refer to formatted source, not this generated document.
 | 16 | `variable path` |
 | 17 | `variable _` |
 | 17 | `variable catalog` |
+| 21 | `definition test_configuration_purposes` |
+| 21 | `parameter monkeypatch` |
+| 21 | `parameter tmp_path` |
+| 25 | `variable _` |
+| 25 | `variable catalog` |
 
 ## tests/test_io.py
 
@@ -551,37 +556,39 @@ Line numbers refer to formatted source, not this generated document.
 | 12 | `variable ROOT` |
 | 13 | `variable SKIP` |
 | 28 | `variable SOURCE_SUFFIXES` |
-| 31 | `definition source_files` |
-| 33 | `variable result` |
-| 34 | `variable children` |
-| 34 | `variable directory` |
-| 34 | `variable files` |
-| 35 | `variable name` |
-| 38 | `variable name` |
-| 42 | `parameter path` |
-| 45 | `definition inventory` |
-| 47 | `variable code` |
-| 56 | `variable catalog` |
-| 62 | `variable path` |
-| 63 | `variable relative` |
-| 66 | `variable content` |
-| 71 | `variable summary` |
-| 77 | `variable entries` |
-| 79 | `variable tree` |
-| 80 | `variable node` |
-| 90 | `variable line` |
-| 90 | `variable number` |
-| 91 | `variable patterns` |
-| 97 | `variable pattern` |
-| 98 | `variable name` |
-| 110 | `variable line` |
-| 110 | `variable name` |
-| 122 | `definition main` |
-| 124 | `variable parser` |
-| 126 | `variable args` |
-| 127 | `variable content` |
-| 127 | `variable name` |
-| 128 | `variable path` |
+| 29 | `variable FILE_PURPOSES` |
+| 46 | `definition source_files` |
+| 48 | `variable result` |
+| 49 | `variable children` |
+| 49 | `variable directory` |
+| 49 | `variable files` |
+| 50 | `variable name` |
+| 53 | `variable name` |
+| 57 | `parameter path` |
+| 60 | `definition inventory` |
+| 62 | `variable code` |
+| 71 | `variable catalog` |
+| 77 | `variable path` |
+| 78 | `variable relative` |
+| 81 | `variable content` |
+| 86 | `variable summary` |
+| 87 | `variable summary` |
+| 95 | `variable entries` |
+| 97 | `variable tree` |
+| 98 | `variable node` |
+| 108 | `variable line` |
+| 108 | `variable number` |
+| 109 | `variable patterns` |
+| 115 | `variable pattern` |
+| 116 | `variable name` |
+| 128 | `variable line` |
+| 128 | `variable name` |
+| 140 | `definition main` |
+| 142 | `variable parser` |
+| 144 | `variable args` |
+| 145 | `variable content` |
+| 145 | `variable name` |
+| 146 | `variable path` |
 
 ## vitest.config.ts
 

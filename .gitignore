@@ -1,5 +1,9 @@
 # File: Exclude private/generated execution state without hiding authored fixtures.
 .venv/
+.env
+.env.*
+*.pem
+*.key
 .runtime/
 __pycache__/
 *.pyc

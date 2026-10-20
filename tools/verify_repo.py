@@ -26,6 +26,21 @@ SKIP = {
     "playwright-report",
 }
 SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql"}
+FILE_PURPOSES = {
+    ".gitattributes": "Normalize source text to LF and preserve binary screenshot assets.",
+    ".gitignore": "Exclude dependencies, runtime/private data, histories and generated builds from Git.",
+    ".prettierignore": "Exclude generated indexes, locks and build/dependency trees from formatting.",
+    ".prettierrc.json": "Shared readable browser/configuration/Markdown formatting options.",
+    "package.json": "Pinned browser dependencies, Node version contract and build/test/audit scripts.",
+    "package-lock.json": "Resolved npm dependency graph with download integrity values.",
+    "pyproject.toml": "Python metadata, supported runtimes, strict lint/type/test and coverage gates.",
+    "requirements.in": "Exact SGP4 runtime dependency input used to regenerate the hashed lock.",
+    "requirements.lock": "Universal pinned Python runtime graph with approved distribution hashes.",
+    "requirements-dev.in": "Scientific test, type, style, audit and packaging dependency inputs.",
+    "requirements-dev.lock": "Universal pinned development/build graph with distribution hashes.",
+    "tsconfig.json": "Strict TypeScript contracts for browser, unit and end-user test code.",
+    "orbital/resources/iss-2024.json": "Reviewed public historical ISS OMM fixture at its May 2024 UTC epoch.",
+}
 
 
 def source_files() -> list[Path]:
@@ -69,6 +84,9 @@ def inventory() -> tuple[str, str]:
             else path.read_text(encoding="utf-8")
         )
         summary = content.splitlines()[0][:150] if content.splitlines() else "Empty file"
+        summary = FILE_PURPOSES.get(relative, summary)
+        if summary.strip() in {"{", "[project]"}:
+            raise ValueError(f"Add a descriptive file purpose for {relative}")
         catalog.append(f"- `{relative}` — {summary.replace('`', '')}")
         if path.suffix not in SOURCE_SUFFIXES:
             continue

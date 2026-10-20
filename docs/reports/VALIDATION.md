@@ -6,7 +6,7 @@ Status: **passed and published**. Reviewed runtime revision: `e297c283c0cc559088
 
 - [Validation 39488314899](https://github.com/JasonStys/orbital-safety-workbench/actions/runs/39488314899): **all eight jobs passed**, covering four scientific/runtime environments, the complete browser suite and three native packages.
 - [CodeQL 39488314820](https://github.com/JasonStys/orbital-safety-workbench/actions/runs/39488314820): **both language analyses passed**; GitHub's code-scanning API returned **zero open findings**. Alerts were corrected, not dismissed.
-- Follow-up documentation-only commits rerun these gates. README badges show current-head status; these immutable links preserve a specific tested runtime revision instead of a self-referential claim about this report's own commit.
+- Follow-up documentation/inventory commits rerun these gates. README badges show current-head status; these immutable links preserve a specific tested runtime revision instead of a self-referential claim about this report's own commit. The completed file-purpose catalog has an additional regression test, making the follow-up Python suite 88 tests; runtime behavior is unchanged.
 
 | Gate                    | Observed result                                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |

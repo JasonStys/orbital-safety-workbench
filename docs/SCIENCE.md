@@ -27,3 +27,5 @@ That distinction matters: it does not refine the underlying nonlinear SGP4 model
 - Analytic relative-motion fixtures, bounded property tests, endpoints, ties and swapped object order test screening logic.
 
 Numerical agreement does **not** establish real-world orbit accuracy, an uncertainty bound, mission suitability, safety certification or compliance. No operational guarantees or performance qualifications are made.
+
+Run IDs hash the actual serialized numeric evidence. Repeated runs with the same build are deterministic; bitwise identity across different platforms, floating-point libraries or native/pure-Python backends is not promised. Compare scientific quantities using the documented numerical tolerances rather than assuming different hashes imply a meaningful physical difference.

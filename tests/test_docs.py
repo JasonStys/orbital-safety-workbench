@@ -16,3 +16,11 @@ def test_portable_inventory_order(tmp_path, monkeypatch):
     assert [path.name for path in verify_repo.source_files()] == ["B.py", "README.md", "a.py"]
     _, catalog = verify_repo.inventory()
     assert catalog.index("`B.py`") < catalog.index("`README.md`") < catalog.index("`a.py`")
+
+
+def test_configuration_purposes(tmp_path, monkeypatch):
+    """Structured configuration gets a human explanation instead of a meaningless brace."""
+    monkeypatch.setattr(verify_repo, "ROOT", tmp_path)
+    (tmp_path / "package.json").write_text("{}\n", encoding="utf-8")
+    _, catalog = verify_repo.inventory()
+    assert "Pinned browser dependencies" in catalog
