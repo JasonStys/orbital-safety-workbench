@@ -1,12 +1,13 @@
 """Generate/check exact-line code and file inventories by Jason Stys.
 
-Functions: source_files, inventory, main. Variables: ROOT, exclusions and source suffixes.
+Functions: listed_paths, source_files, inventory, main. Variables: ROOT, file purposes and exclusions.
 Headers reference this index instead of fragile duplicated line numbers. Index: docs/CODE_INDEX.md.
 """
 
 import argparse
 import ast
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,16 +44,46 @@ FILE_PURPOSES = {
 }
 
 
+def listed_paths() -> list[str]:
+    """Ask Git for tracked/nonignored source intent, never scan ignored private/dependency trees."""
+    result = subprocess.run(
+        [
+            "git",
+            "-c",
+            f"safe.directory={ROOT.as_posix()}",
+            "-C",
+            str(ROOT),
+            "ls-files",
+            "--cached",
+            "--others",
+            "--exclude-standard",
+            "-z",
+        ],
+        check=True,
+        capture_output=True,
+        timeout=15,
+    )
+    return [name for name in result.stdout.decode("utf-8").split("\0") if name]
+
+
 def source_files() -> list[Path]:
-    """Walk only small authored trees; prune dependencies and generated/private outputs."""
+    """Confine Git's nonignored file list; refuse symlinks/escape and exclude secret formats."""
     result = []
-    for directory, children, files in ROOT.walk():
-        children[:] = sorted(name for name in children if name not in SKIP)
-        result.extend(
-            directory / name
-            for name in sorted(files)
-            if name != ".coverage" and not name.endswith(".spec")
-        )
+    for name in set(listed_paths()):
+        relative = Path(name)
+        if any(part in SKIP or part.lower().startswith(".env") for part in relative.parts):
+            continue
+        if (
+            relative.name == ".coverage"
+            or relative.suffix.lower() in {".spec", ".pem", ".key"}
+            or ".sqlite3" in relative.name.lower()
+        ):
+            continue
+        path = ROOT / relative
+        if path.is_symlink() or not path.resolve().is_relative_to(ROOT.resolve()):
+            raise ValueError("Source inventory cannot follow symlinks or leave its repository")
+        if path.is_file():
+            result.append(path)
     # Path ordering differs by OS; normalized string keys give portable documentation.
     return sorted(result, key=lambda path: path.relative_to(ROOT).as_posix())
 

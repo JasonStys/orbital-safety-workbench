@@ -299,17 +299,27 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 10 | `definition test_portable_inventory_order` |
-| 10 | `parameter monkeypatch` |
-| 10 | `parameter tmp_path` |
-| 16 | `variable path` |
-| 17 | `variable _` |
-| 17 | `variable catalog` |
-| 21 | `definition test_configuration_purposes` |
-| 21 | `parameter monkeypatch` |
-| 21 | `parameter tmp_path` |
-| 25 | `variable _` |
-| 25 | `variable catalog` |
+| 12 | `definition test_portable_inventory_order` |
+| 12 | `parameter monkeypatch` |
+| 12 | `parameter tmp_path` |
+| 19 | `variable path` |
+| 20 | `variable _` |
+| 20 | `variable catalog` |
+| 24 | `definition test_configuration_purposes` |
+| 24 | `parameter monkeypatch` |
+| 24 | `parameter tmp_path` |
+| 29 | `variable _` |
+| 29 | `variable catalog` |
+| 33 | `definition test_private_files_never_enter_catalog` |
+| 33 | `parameter monkeypatch` |
+| 33 | `parameter tmp_path` |
+| 39 | `variable name` |
+| 43 | `variable _` |
+| 43 | `variable catalog` |
+| 45 | `variable p` |
+| 48 | `definition test_inventory_path_confinement` |
+| 48 | `parameter monkeypatch` |
+| 48 | `parameter tmp_path` |
 
 ## tests/test_io.py
 
@@ -553,42 +563,44 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 12 | `variable ROOT` |
-| 13 | `variable SKIP` |
-| 28 | `variable SOURCE_SUFFIXES` |
-| 29 | `variable FILE_PURPOSES` |
-| 46 | `definition source_files` |
-| 48 | `variable result` |
-| 49 | `variable children` |
-| 49 | `variable directory` |
-| 49 | `variable files` |
-| 50 | `variable name` |
-| 53 | `variable name` |
-| 57 | `parameter path` |
-| 60 | `definition inventory` |
-| 62 | `variable code` |
-| 71 | `variable catalog` |
-| 77 | `variable path` |
-| 78 | `variable relative` |
-| 81 | `variable content` |
-| 86 | `variable summary` |
-| 87 | `variable summary` |
-| 95 | `variable entries` |
-| 97 | `variable tree` |
-| 98 | `variable node` |
-| 108 | `variable line` |
-| 108 | `variable number` |
-| 109 | `variable patterns` |
-| 115 | `variable pattern` |
-| 116 | `variable name` |
-| 128 | `variable line` |
-| 128 | `variable name` |
-| 140 | `definition main` |
-| 142 | `variable parser` |
-| 144 | `variable args` |
-| 145 | `variable content` |
-| 145 | `variable name` |
-| 146 | `variable path` |
+| 13 | `variable ROOT` |
+| 14 | `variable SKIP` |
+| 29 | `variable SOURCE_SUFFIXES` |
+| 30 | `variable FILE_PURPOSES` |
+| 47 | `definition listed_paths` |
+| 49 | `variable result` |
+| 66 | `variable name` |
+| 69 | `definition source_files` |
+| 71 | `variable result` |
+| 72 | `variable name` |
+| 73 | `variable relative` |
+| 74 | `variable part` |
+| 82 | `variable path` |
+| 88 | `parameter path` |
+| 91 | `definition inventory` |
+| 93 | `variable code` |
+| 102 | `variable catalog` |
+| 108 | `variable path` |
+| 109 | `variable relative` |
+| 112 | `variable content` |
+| 117 | `variable summary` |
+| 118 | `variable summary` |
+| 126 | `variable entries` |
+| 128 | `variable tree` |
+| 129 | `variable node` |
+| 139 | `variable line` |
+| 139 | `variable number` |
+| 140 | `variable patterns` |
+| 146 | `variable pattern` |
+| 147 | `variable name` |
+| 159 | `variable line` |
+| 159 | `variable name` |
+| 171 | `definition main` |
+| 173 | `variable parser` |
+| 175 | `variable args` |
+| 176 | `variable content` |
+| 176 | `variable name` |
+| 177 | `variable path` |
 
 ## vitest.config.ts
 
