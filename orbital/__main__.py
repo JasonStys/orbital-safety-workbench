@@ -54,7 +54,7 @@ def main(argv: list[str] | None = None) -> int:
             try:
                 server.serve_forever(poll_interval=0.25)
             except KeyboardInterrupt:
-                pass
+                print("Workbench stopped.", flush=True)
         return 0
     except (OSError, ValueError, sqlite3.Error) as error:
         print(f"Cannot complete operation: {error}", file=sys.stderr)

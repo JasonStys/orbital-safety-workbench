@@ -204,53 +204,54 @@ Line numbers refer to formatted source, not this generated document.
 | --- | --- |
 | 16 | `variable CSP` |
 | 21 | `variable ASSET_TYPES` |
-| 30 | `definition WorkbenchServer` |
-| 33 | `variable daemon_threads` |
-| 34 | `variable assets` |
-| 37 | `definition Handler` |
-| 40 | `variable server` |
-| 41 | `variable server_version` |
-| 42 | `variable sys_version` |
-| 44 | `definition log_message` |
-| 44 | `parameter args` |
-| 44 | `parameter format` |
-| 44 | `parameter self` |
-| 47 | `definition reply` |
-| 48 | `parameter body` |
-| 48 | `parameter content_type` |
-| 48 | `parameter filename` |
-| 48 | `parameter self` |
-| 48 | `parameter status` |
-| 66 | `definition do_GET` |
-| 66 | `parameter self` |
-| 68 | `variable expected_host` |
-| 86 | `definition route` |
-| 86 | `parameter self` |
-| 88 | `variable url` |
-| 89 | `variable query` |
-| 96 | `variable v` |
-| 99 | `variable scenario` |
-| 100 | `variable minutes` |
-| 101 | `variable format_name` |
-| 104 | `variable body` |
-| 104 | `variable content_type` |
-| 105 | `variable filename` |
-| 109 | `variable path` |
-| 110 | `variable parts` |
-| 111 | `variable allowed` |
-| 117 | `variable p` |
-| 121 | `variable target` |
-| 132 | `definition do_POST` |
-| 132 | `parameter self` |
-| 136 | `variable do_PUT` |
-| 137 | `variable do_DELETE` |
-| 138 | `variable do_PATCH` |
-| 139 | `variable do_OPTIONS` |
-| 140 | `variable do_HEAD` |
-| 143 | `definition make_server` |
-| 143 | `parameter assets` |
-| 143 | `parameter port` |
-| 145 | `variable server` |
+| 28 | `variable DOWNLOAD_NAMES` |
+| 35 | `definition WorkbenchServer` |
+| 38 | `variable daemon_threads` |
+| 39 | `variable assets` |
+| 42 | `definition Handler` |
+| 45 | `variable server` |
+| 46 | `variable server_version` |
+| 47 | `variable sys_version` |
+| 49 | `definition log_message` |
+| 49 | `parameter args` |
+| 49 | `parameter format` |
+| 49 | `parameter self` |
+| 52 | `definition reply` |
+| 53 | `parameter body` |
+| 53 | `parameter content_type` |
+| 53 | `parameter filename` |
+| 53 | `parameter self` |
+| 53 | `parameter status` |
+| 71 | `definition do_GET` |
+| 71 | `parameter self` |
+| 73 | `variable expected_host` |
+| 91 | `definition route` |
+| 91 | `parameter self` |
+| 93 | `variable url` |
+| 94 | `variable query` |
+| 101 | `variable v` |
+| 104 | `variable scenario` |
+| 105 | `variable minutes` |
+| 106 | `variable format_name` |
+| 109 | `variable body` |
+| 109 | `variable content_type` |
+| 110 | `variable filename` |
+| 114 | `variable path` |
+| 115 | `variable parts` |
+| 116 | `variable allowed` |
+| 122 | `variable p` |
+| 126 | `variable target` |
+| 137 | `definition do_POST` |
+| 137 | `parameter self` |
+| 141 | `variable do_PUT` |
+| 142 | `variable do_DELETE` |
+| 143 | `variable do_PATCH` |
+| 144 | `variable do_OPTIONS` |
+| 145 | `variable do_HEAD` |
+| 148 | `definition make_server` |
+| 148 | `parameter assets` |
+| 148 | `parameter port` |
+| 150 | `variable server` |
 
 ## playwright.config.ts
 
@@ -293,6 +294,17 @@ Line numbers refer to formatted source, not this generated document.
 | 82 | `data` |
 | 89 | `scenario` |
 | 90 | `minutes` |
+
+## tests/test_docs.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 10 | `definition test_portable_inventory_order` |
+| 10 | `parameter monkeypatch` |
+| 10 | `parameter tmp_path` |
+| 16 | `variable path` |
+| 17 | `variable _` |
+| 17 | `variable catalog` |
 
 ## tests/test_io.py
 
@@ -354,34 +366,41 @@ Line numbers refer to formatted source, not this generated document.
 | 208 | `definition test_http_path_rejection` |
 | 208 | `parameter path` |
 | 208 | `parameter running_server` |
-| 226 | `definition test_http_query_rejection` |
-| 226 | `parameter query` |
-| 226 | `parameter running_server` |
-| 228 | `variable _` |
-| 228 | `variable body` |
-| 228 | `variable status` |
-| 241 | `definition test_http_rebinding_and_origin` |
-| 241 | `parameter headers` |
-| 241 | `parameter running_server` |
-| 247 | `definition test_no_mutations` |
-| 247 | `parameter method` |
-| 247 | `parameter running_server` |
-| 252 | `definition test_long_request_and_resource_failure` |
-| 252 | `parameter monkeypatch` |
-| 252 | `parameter running_server` |
-| 256 | `definition broken` |
-| 256 | `parameter args` |
-| 261 | `variable _` |
-| 261 | `variable body` |
-| 261 | `variable status` |
-| 265 | `definition test_symlink_escape` |
-| 265 | `parameter running_server` |
-| 265 | `parameter tmp_path` |
-| 268 | `variable outside` |
-| 269 | `variable original` |
-| 275 | `parameter a` |
-| 275 | `parameter k` |
-| 275 | `parameter p` |
+| 213 | `definition test_fixed_download_headers` |
+| 213 | `parameter running_server` |
+| 215 | `variable _` |
+| 215 | `variable headers` |
+| 217 | `variable _` |
+| 217 | `variable headers` |
+| 217 | `variable status` |
+| 234 | `definition test_http_query_rejection` |
+| 234 | `parameter query` |
+| 234 | `parameter running_server` |
+| 236 | `variable _` |
+| 236 | `variable body` |
+| 236 | `variable status` |
+| 249 | `definition test_http_rebinding_and_origin` |
+| 249 | `parameter headers` |
+| 249 | `parameter running_server` |
+| 255 | `definition test_no_mutations` |
+| 255 | `parameter method` |
+| 255 | `parameter running_server` |
+| 260 | `definition test_long_request_and_resource_failure` |
+| 260 | `parameter monkeypatch` |
+| 260 | `parameter running_server` |
+| 264 | `definition broken` |
+| 264 | `parameter args` |
+| 269 | `variable _` |
+| 269 | `variable body` |
+| 269 | `variable status` |
+| 273 | `definition test_symlink_escape` |
+| 273 | `parameter running_server` |
+| 273 | `parameter tmp_path` |
+| 276 | `variable outside` |
+| 277 | `variable original` |
+| 283 | `parameter a` |
+| 283 | `parameter k` |
+| 283 | `parameter p` |
 
 ## tests/test_science.py
 
@@ -539,29 +558,30 @@ Line numbers refer to formatted source, not this generated document.
 | 34 | `variable files` |
 | 35 | `variable name` |
 | 38 | `variable name` |
-| 44 | `definition inventory` |
-| 46 | `variable code` |
-| 55 | `variable catalog` |
-| 61 | `variable path` |
-| 62 | `variable relative` |
-| 65 | `variable content` |
-| 70 | `variable summary` |
-| 76 | `variable entries` |
-| 78 | `variable tree` |
-| 79 | `variable node` |
-| 89 | `variable line` |
-| 89 | `variable number` |
-| 90 | `variable patterns` |
-| 96 | `variable pattern` |
-| 97 | `variable name` |
-| 109 | `variable line` |
-| 109 | `variable name` |
-| 121 | `definition main` |
-| 123 | `variable parser` |
-| 125 | `variable args` |
-| 126 | `variable content` |
-| 126 | `variable name` |
-| 127 | `variable path` |
+| 42 | `parameter path` |
+| 45 | `definition inventory` |
+| 47 | `variable code` |
+| 56 | `variable catalog` |
+| 62 | `variable path` |
+| 63 | `variable relative` |
+| 66 | `variable content` |
+| 71 | `variable summary` |
+| 77 | `variable entries` |
+| 79 | `variable tree` |
+| 80 | `variable node` |
+| 90 | `variable line` |
+| 90 | `variable number` |
+| 91 | `variable patterns` |
+| 97 | `variable pattern` |
+| 98 | `variable name` |
+| 110 | `variable line` |
+| 110 | `variable name` |
+| 122 | `definition main` |
+| 124 | `variable parser` |
+| 126 | `variable args` |
+| 127 | `variable content` |
+| 127 | `variable name` |
+| 128 | `variable path` |
 
 ## vitest.config.ts
 

@@ -210,6 +210,14 @@ def test_http_path_rejection(running_server, path):
     assert request(running_server, path)[0] == 404
 
 
+def test_fixed_download_headers(running_server):
+    """Download names never reflect request text, including encoded header delimiters."""
+    _, headers, _ = request(running_server, "/api/report?scenario=synthetic-crossing&format=json")
+    assert headers["Content-Disposition"] == 'attachment; filename="orbital-evidence.json"'
+    status, headers, _ = request(running_server, "/api/report?format=json%0D%0AX-Injected%3Ayes")
+    assert status == 400 and "X-Injected" not in headers
+
+
 @pytest.mark.parametrize(
     "query",
     [

@@ -1,6 +1,6 @@
 """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
 
-Classes/functions: WorkbenchServer, Handler, make_server. Variables: CSP and ASSET_TYPES.
+Classes/functions: WorkbenchServer, Handler, make_server. Variables: CSP, ASSET_TYPES, DOWNLOAD_NAMES.
 No upload, remote fetch, account, telemetry, shell, or arbitrary file APIs. See docs/CODE_INDEX.md.
 """
 
@@ -24,6 +24,11 @@ ASSET_TYPES = {
     ".css": "text/css",
     ".svg": "image/svg+xml",
     ".ico": "image/x-icon",
+}
+DOWNLOAD_NAMES = {
+    "json": "orbital-evidence.json",
+    "csv": "orbital-samples.csv",
+    "html": "orbital-evidence.html",
 }
 
 
@@ -102,7 +107,7 @@ class Handler(BaseHTTPRequestHandler):
             if url.path == "/api/run" and "format" in query:
                 raise ValueError("Unsupported run parameter")
             body, content_type = export_report(build_run(scenario, minutes), format_name)
-            filename = f"{scenario}-{minutes}.{format_name}" if url.path == "/api/report" else None
+            filename = DOWNLOAD_NAMES[format_name] if url.path == "/api/report" else None
             self.reply(200, body, content_type, filename)
         else:
             # Vite emits a flat, hash-named assets folder; no general filesystem route.

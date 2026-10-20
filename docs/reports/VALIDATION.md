@@ -23,4 +23,10 @@ Status: local validation passed; publication and GitHub-hosted checks are pendin
 
 Actions storage was checked first: billing meter reported 0.5/0.5 GB; live run artifacts 58,024,434 bytes, separate caches 15,203,216,587 bytes. Existing data was untouched. Workflows use no artifact upload or cache actions; releases use separate Release asset storage.
 
+## First hosted run and corrections
+
+At source commit `6c9d48f`, [Validation 39487738897](https://github.com/JasonStys/orbital-safety-workbench/actions/runs/39487738897) passed the browser suite, Windows scientific tests and all three native builds/smoke checks. Linux/macOS inventory checks failed because Python `Path` sorting differs by platform. The generator now sorts explicit POSIX string keys; a mixed-case filename regression test checks portability.
+
+[CodeQL 39487738893](https://github.com/JasonStys/orbital-safety-workbench/actions/runs/39487738893) ran successfully but reported two findings. They were corrected, not dismissed: download headers now use fixed allowlisted names rather than echo scenario/query strings, and expected Ctrl+C shutdown emits an explicit stop message instead of an empty exception handler. A header-injection regression rejects encoded CRLF parameters. Follow-up hosted checks and alert state will be recorded below.
+
 No physical orbit accuracy, collision probability, operational suitability or certification is claimed. See the scientific method and testing strategy for exact scope.

@@ -38,7 +38,8 @@ def source_files() -> list[Path]:
             for name in sorted(files)
             if name != ".coverage" and not name.endswith(".spec")
         )
-    return sorted(result)
+    # Path ordering differs by OS; normalized string keys give portable documentation.
+    return sorted(result, key=lambda path: path.relative_to(ROOT).as_posix())
 
 
 def inventory() -> tuple[str, str]:
