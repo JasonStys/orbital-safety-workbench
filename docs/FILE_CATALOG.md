@@ -23,6 +23,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/USER_GUIDE.md` — # Using the workbench
 - `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
 - `docs/reports/VALIDATION.md` — # Validation record
+- `docs/reports/portfolio-sync-2026-10-22.md` — <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. -->
 - `launcher.py` — """Standalone application entry by Jason Stys; main is the documented CLI entry.
 - `orbital/__init__.py` — """Bounded civilian science application by Jason Stys.
 - `orbital/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
