@@ -39,6 +39,19 @@ export interface Run {
   limitations: string[];
   tracks: Track[];
   events: Event[];
+  screening_windows: {
+    first: string;
+    second: string;
+    threshold_km: number;
+    total_duration_s: number;
+    windows: {
+      start_s: number;
+      end_s: number;
+      duration_s: number;
+      start_censored: boolean;
+      end_censored: boolean;
+    }[];
+  }[];
 }
 export interface Descriptor {
   id: string;
