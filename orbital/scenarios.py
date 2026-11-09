@@ -17,6 +17,7 @@ from sgp4.api import SGP4_ERRORS, Satrec, jday
 
 from orbital import VERSION
 from orbital.model import Sample, Track, closest_approaches, track_record, validate_tracks
+from orbital.screening import screening_windows
 
 EARTH_RADIUS_KM = 6378.135
 WINDOWS = (30, 60, 120)
@@ -163,6 +164,9 @@ def _run_json(scenario: str, minutes: int) -> str:
         "provenance": provenance,
         "tracks": [track_record(track) for track in tracks],
         "events": closest_approaches(tracks),
+        "screening_windows": [
+            entry for radius in (1, 5, 10) for entry in screening_windows(tracks, radius)
+        ],
         "limitations": list(LIMITATIONS),
     }
     result["id"] = run_id(result)

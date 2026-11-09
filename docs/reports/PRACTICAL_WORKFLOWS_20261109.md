@@ -1,0 +1,7 @@
+# Illustrative screening-window validation — 2026-11-09
+
+Windows / Python3.14.6:99 Python tests passed with99.35% combined statement/branch coverage; the screening module has100%. Independent analytic cases verify a between-sample [4,6]s crossing, a zero-duration tangent, stationary inside/outside pairs, merged segment boundaries, retreating no-window paths, one-object absence and invalid thresholds. Existing archived SGP4/scientific and history/security tests remain unchanged and passing.
+
+Sixteen TypeScript tests, strict production build and21 real-service browser tests passed across Chromium, Firefox and WebKit, including threshold inspection, nearest-second replay, no-WebGL fallback, actual exports, accessibility, preferences and stale/error handling. Ruff, strict mypy, formatting/source indexes and locked dependency audits pass (no known Python vulnerabilities; zero npm vulnerabilities). Vite reports its existing Three.js bundle above the500kB advisory threshold; this is a size advisory, not a failed check or an asserted performance guarantee.
+
+Threshold windows describe only sampled piecewise-linear histories at floating-point precision. They do not add covariance, object sizes, collision probability, real-time surveillance, guidance, targeting or interception. Source epoch safeguards remain intact. Parent handles remote Actions and cross-platform portable builds; no child push or remote workflow occurred.

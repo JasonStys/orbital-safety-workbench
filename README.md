@@ -2,6 +2,8 @@
 
 Civilian orbit replay, transparent multi-object screening and reproducible scientific evidence. Created by **Jason Stys**.
 
+Inspect [illustrative threshold windows](docs/SCREENING_WINDOWS.md), including exact piecewise-linear entry/exit times, duration, tangencies and window-edge censoring. Replay buttons inspect the nearest second. These teaching thresholds add no collision probability, safety radius or maneuver/interception advice.
+
 [![Validation](https://github.com/JasonStys/orbital-safety-workbench/actions/workflows/validate.yml/badge.svg)](https://github.com/JasonStys/orbital-safety-workbench/actions/workflows/validate.yml)
 [![CodeQL](https://github.com/JasonStys/orbital-safety-workbench/actions/workflows/codeql.yml/badge.svg)](https://github.com/JasonStys/orbital-safety-workbench/actions/workflows/codeql.yml)
 

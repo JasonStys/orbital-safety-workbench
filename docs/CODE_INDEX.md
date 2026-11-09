@@ -142,61 +142,107 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 21 | `variable EARTH_RADIUS_KM` |
-| 22 | `variable WINDOWS` |
-| 23 | `variable CATALOG` |
-| 43 | `variable LIMITATIONS` |
-| 53 | `definition catalog` |
-| 55 | `variable item` |
-| 58 | `definition propagate_iss` |
-| 58 | `parameter minutes` |
-| 66 | `variable raw` |
-| 67 | `variable fields` |
-| 68 | `variable satellite` |
-| 70 | `variable epoch` |
-| 71 | `variable samples` |
-| 72 | `variable seconds` |
-| 73 | `variable date` |
-| 74 | `variable fraction` |
-| 74 | `variable jd` |
-| 82 | `variable error` |
-| 82 | `variable position` |
-| 82 | `variable velocity` |
-| 86 | `variable provenance` |
-| 98 | `definition synthetic_tracks` |
-| 98 | `parameter minutes` |
-| 98 | `parameter separated` |
-| 106 | `variable tracks` |
-| 107 | `variable index` |
-| 107 | `variable name` |
-| 108 | `variable samples` |
-| 109 | `variable seconds` |
-| 110 | `variable angle` |
-| 111 | `variable offset` |
-| 112 | `variable z` |
+| 22 | `variable EARTH_RADIUS_KM` |
+| 23 | `variable WINDOWS` |
+| 24 | `variable CATALOG` |
+| 44 | `variable LIMITATIONS` |
+| 54 | `definition catalog` |
+| 56 | `variable item` |
+| 59 | `definition propagate_iss` |
+| 59 | `parameter minutes` |
+| 67 | `variable raw` |
+| 68 | `variable fields` |
+| 69 | `variable satellite` |
+| 71 | `variable epoch` |
+| 72 | `variable samples` |
+| 73 | `variable seconds` |
+| 74 | `variable date` |
+| 75 | `variable fraction` |
+| 75 | `variable jd` |
+| 83 | `variable error` |
+| 83 | `variable position` |
+| 83 | `variable velocity` |
+| 87 | `variable provenance` |
+| 99 | `definition synthetic_tracks` |
+| 99 | `parameter minutes` |
+| 99 | `parameter separated` |
+| 107 | `variable tracks` |
+| 108 | `variable index` |
+| 108 | `variable name` |
+| 109 | `variable samples` |
+| 110 | `variable seconds` |
+| 111 | `variable angle` |
+| 112 | `variable offset` |
 | 113 | `variable z` |
-| 114 | `variable position` |
-| 115 | `variable velocity` |
-| 125 | `definition run_id` |
-| 125 | `parameter run` |
-| 127 | `variable content` |
-| 127 | `variable key` |
-| 127 | `variable value` |
-| 134 | `definition _run_json` |
-| 134 | `parameter minutes` |
-| 134 | `parameter scenario` |
-| 136 | `variable item` |
-| 138 | `variable tracks` |
-| 140 | `variable provenance` |
-| 140 | `variable track` |
-| 141 | `variable tracks` |
-| 143 | `variable tracks` |
-| 144 | `variable provenance` |
-| 154 | `variable result` |
-| 164 | `variable track` |
-| 172 | `definition build_run` |
-| 172 | `parameter minutes` |
-| 172 | `parameter scenario` |
+| 114 | `variable z` |
+| 115 | `variable position` |
+| 116 | `variable velocity` |
+| 126 | `definition run_id` |
+| 126 | `parameter run` |
+| 128 | `variable content` |
+| 128 | `variable key` |
+| 128 | `variable value` |
+| 135 | `definition _run_json` |
+| 135 | `parameter minutes` |
+| 135 | `parameter scenario` |
+| 137 | `variable item` |
+| 139 | `variable tracks` |
+| 141 | `variable provenance` |
+| 141 | `variable track` |
+| 142 | `variable tracks` |
+| 144 | `variable tracks` |
+| 145 | `variable provenance` |
+| 155 | `variable result` |
+| 165 | `variable track` |
+| 168 | `variable entry` |
+| 168 | `variable radius` |
+| 176 | `definition build_run` |
+| 176 | `parameter minutes` |
+| 176 | `parameter scenario` |
+
+## orbital/screening.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 13 | `definition screening_windows` |
+| 13 | `parameter radius_km` |
+| 13 | `parameter tracks` |
+| 27 | `variable result` |
+| 28 | `variable first` |
+| 28 | `variable index` |
+| 29 | `variable second` |
+| 30 | `variable windows` |
+| 31 | `variable n` |
+| 32 | `variable a` |
+| 32 | `variable b` |
+| 33 | `variable c` |
+| 33 | `variable d` |
+| 34 | `variable relative` |
+| 34 | `variable x` |
+| 34 | `variable y` |
+| 35 | `variable delta` |
+| 37 | `variable u` |
+| 37 | `variable v` |
+| 37 | `variable x` |
+| 37 | `variable y` |
+| 41 | `variable speed2` |
+| 41 | `variable x` |
+| 43 | `variable x` |
+| 45 | `variable entry` |
+| 45 | `variable exit_` |
+| 47 | `variable center` |
+| 47 | `variable x` |
+| 47 | `variable y` |
+| 48 | `variable perpendicular2` |
+| 49 | `variable x` |
+| 49 | `variable y` |
+| 53 | `variable half` |
+| 54 | `variable entry` |
+| 54 | `variable exit_` |
+| 57 | `variable start` |
+| 58 | `variable end` |
+| 63 | `variable window` |
+| 75 | `variable w` |
 
 ## orbital/server.py
 
@@ -487,18 +533,45 @@ Line numbers refer to formatted source, not this generated document.
 | 194 | `parameter self` |
 | 199 | `parameter _` |
 
+## tests/test_screening.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 16 | `definition track` |
+| 16 | `parameter name` |
+| 16 | `parameter positions` |
+| 19 | `variable i` |
+| 19 | `variable p` |
+| 23 | `definition test_analytic_between_sample_crossing_and_tangency` |
+| 25 | `variable fixed` |
+| 26 | `variable crossing` |
+| 27 | `variable row` |
+| 31 | `variable tangent` |
+| 33 | `variable absent` |
+| 37 | `definition test_stationary_merged_edges_and_missed_segment` |
+| 39 | `variable fixed` |
+| 40 | `variable inside` |
+| 41 | `variable window` |
+| 44 | `variable outside` |
+| 46 | `variable retreat` |
+| 52 | `definition test_invalid_threshold` |
+| 52 | `parameter radius` |
+| 58 | `definition test_run_includes_all_illustrative_thresholds_without_probability` |
+| 60 | `variable run` |
+| 62 | `variable event` |
+
 ## tests/ui.spec.ts
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 12 | `foreign` |
-| 18 | `original` |
-| 20 | `value` |
-| 54 | `downloadPromise` |
-| 56 | `download` |
-| 57 | `report` |
-| 102 | `desktop` |
-| 112 | `mobile` |
+| 23 | `foreign` |
+| 29 | `original` |
+| 31 | `value` |
+| 65 | `downloadPromise` |
+| 67 | `download` |
+| 68 | `report` |
+| 113 | `desktop` |
+| 123 | `mobile` |
 
 ## tools/package_app.py
 
@@ -735,35 +808,43 @@ Line numbers refer to formatted source, not this generated document.
 | 127 | `distance` |
 | 134 | `note` |
 | 140 | `provenance` |
-| 142 | `entries` |
-| 144 | `Frame` |
-| 145 | `Model` |
-| 146 | `Source` |
-| 152 | `dt` |
-| 153 | `dd` |
-| 160 | `li` |
-| 165 | `format` |
-| 166 | `link` |
-| 169 | `scene` |
-| 170 | `scene` |
-| 173 | `scene` |
-| 184 | `load` |
-| 185 | `version` |
-| 186 | `request` |
-| 187 | `request` |
-| 196 | `response` |
-| 201 | `value` |
-| 204 | `saved` |
-| 210 | `saved` |
-| 229 | `animate` |
-| 231 | `time` |
-| 232 | `lastFrame` |
-| 252 | `time` |
-| 260 | `playing` |
-| 261 | `lastFrame` |
-| 264 | `animationFrame` |
-| 272 | `request` |
-| 273 | `scene` |
+| 141 | `screening` |
+| 143 | `heading` |
+| 145 | `explanation` |
+| 149 | `entry` |
+| 150 | `row` |
+| 153 | `window` |
+| 154 | `button` |
+| 159 | `time` |
+| 169 | `entries` |
+| 171 | `Frame` |
+| 172 | `Model` |
+| 173 | `Source` |
+| 179 | `dt` |
+| 180 | `dd` |
+| 187 | `li` |
+| 192 | `format` |
+| 193 | `link` |
+| 196 | `scene` |
+| 197 | `scene` |
+| 200 | `scene` |
+| 211 | `load` |
+| 212 | `version` |
+| 213 | `request` |
+| 214 | `request` |
+| 223 | `response` |
+| 228 | `value` |
+| 231 | `saved` |
+| 237 | `saved` |
+| 256 | `animate` |
+| 258 | `time` |
+| 259 | `lastFrame` |
+| 279 | `time` |
+| 287 | `playing` |
+| 288 | `lastFrame` |
+| 291 | `animationFrame` |
+| 299 | `request` |
+| 300 | `scene` |
 
 ## web/scene.ts
 
@@ -1149,11 +1230,22 @@ Line numbers refer to formatted source, not this generated document.
 | 39 | `limitations` |
 | 40 | `tracks` |
 | 41 | `events` |
-| 43 | `Descriptor` |
-| 44 | `id` |
-| 45 | `title` |
-| 46 | `kind` |
-| 47 | `summary` |
+| 42 | `screening_windows` |
+| 43 | `first` |
+| 44 | `second` |
+| 45 | `threshold_km` |
+| 46 | `total_duration_s` |
+| 47 | `windows` |
+| 48 | `start_s` |
+| 49 | `end_s` |
+| 50 | `duration_s` |
+| 51 | `start_censored` |
+| 52 | `end_censored` |
+| 56 | `Descriptor` |
+| 57 | `id` |
+| 58 | `title` |
+| 59 | `kind` |
+| 60 | `summary` |
 
 ## web/vite.config.ts
 

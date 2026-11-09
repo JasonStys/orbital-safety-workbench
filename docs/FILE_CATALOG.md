@@ -17,11 +17,13 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
 - `docs/RELEASE.md` — # Release and rollback runbook
 - `docs/SCIENCE.md` — # Scientific method, provenance and limits
+- `docs/SCREENING_WINDOWS.md` — # Inspect illustrative distance windows
 - `docs/SECURITY.md` — # Security and privacy model
 - `docs/TESTING.md` — # Test strategy
 - `docs/THIRD_PARTY.md` — # Data and third-party notices
 - `docs/USER_GUIDE.md` — # Using the workbench
 - `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Illustrative screening-window validation — 2026-11-09
 - `docs/reports/VALIDATION.md` — # Validation record
 - `docs/reports/portfolio-sync-2026-10-22.md` — <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. -->
 - `launcher.py` — """Standalone application entry by Jason Stys; main is the documented CLI entry.
@@ -32,6 +34,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `orbital/resources/history.sql` — -- Immutable local run evidence by Jason Stys. No identities, credentials or telemetry.
 - `orbital/resources/iss-2024.json` — Reviewed public historical ISS OMM fixture at its May 2024 UTC epoch.
 - `orbital/scenarios.py` — """Reviewed civilian fixtures and bounded scientific runs by Jason Stys.
+- `orbital/screening.py` — """Illustrative distance-threshold windows by Jason Stys.
 - `orbital/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
 - `package-lock.json` — Resolved npm dependency graph with download integrity values.
 - `package.json` — Pinned browser dependencies, Node version contract and build/test/audit scripts.
@@ -45,6 +48,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_docs.py` — """Cross-platform generated-documentation regression tests by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_science.py` — """Numerical/reference/property regression tests by Jason Stys.
+- `tests/test_screening.py` — """Independent linear distance-window geometry by Jason Stys.
 - `tests/ui.spec.ts` — /** End-user production-server tests by Jason Stys.
 - `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
 - `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.

@@ -6,6 +6,17 @@ import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
 
+test("illustrative windows retain exact bounds and replay inspection", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("status")).toContainText("Evidence ready");
+  await page.locator("#scenario").selectOption("synthetic-crossing");
+  await expect(page.locator("#scene-title")).toContainText("Fictional");
+  await expect(page.locator("#screening-windows")).toBeVisible();
+  await page.locator("#screening-windows summary").click();
+  await expect(page.locator("#screening-windows")).toContainText("not safety radii");
+  await page.locator("#screening-windows button").first().click();
+  await expect(page.locator("#time")).not.toHaveValue("0");
+});
 test("no-WebGL fallback preserves scientific evidence without external requests", async ({
   page,
 }) => {

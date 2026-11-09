@@ -138,6 +138,33 @@ function renderRun(value: Run): void {
     events.append(note);
   }
   const provenance = el("provenance");
+  const screening = document.createElement("details");
+  screening.id = "screening-windows";
+  const heading = document.createElement("summary");
+  heading.textContent = "Illustrative distance-threshold windows";
+  const explanation = document.createElement("p");
+  explanation.textContent =
+    "Closed 1, 5 and 10 km thresholds are teaching examples, not safety radii. Entry/exit and duration come from the sampled piecewise-linear histories; a zero-duration touch is retained. Window-edge censoring does not imply an entry or exit was observed. No covariance, object sizes, collision probability or maneuver advice.";
+  screening.append(heading, explanation);
+  for (const entry of run.screening_windows) {
+    const row = document.createElement("p");
+    row.textContent = `${entry.first} / ${entry.second} · ≤ ${entry.threshold_km} km · ${entry.total_duration_s.toFixed(3)} s total: ${entry.windows.map((window) => `${window.start_s.toFixed(3)}–${window.end_s.toFixed(3)} s${window.start_censored ? " (start-censored)" : ""}${window.end_censored ? " (end-censored)" : ""}`).join("; ") || "no window"}`;
+    screening.append(row);
+    for (const window of entry.windows) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = `Inspect nearest replay second to ${entry.threshold_km} km entry at ${window.start_s.toFixed(3)} s`;
+      button.addEventListener("click", () => {
+        stop();
+        time = Math.round(window.start_s);
+        slider.value = String(time);
+        updateCursor();
+      });
+      screening.append(button);
+    }
+  }
+  if (!run.screening_windows.length) screening.append("One object: no pairwise windows.");
+  events.append(screening);
   provenance.replaceChildren();
   const entries = {
     "Epoch / UTC": run.provenance.epoch_utc,
