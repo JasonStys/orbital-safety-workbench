@@ -1,7 +1,7 @@
 # Jason Stys: bounded educational orbital replay, numerical contracts, and tool policy.
 [project]
 name = "orbital-safety-workbench"
-version = "1.0.0"
+version = "1.1.0"
 description = "Civilian archived orbit replay and synthetic close-approach evidence by Jason Stys"
 requires-python = ">=3.12,<3.15"
 dependencies = ["sgp4==2.27"]
@@ -28,3 +28,9 @@ files = ["orbital"]
 [[tool.mypy.overrides]]
 module = ["sgp4.*"]
 ignore_missing_imports = true
+
+[tool.portable]
+package = "orbital"
+executable = "OrbitalSafetyWorkbench"
+title = "Orbital Safety Workbench"
+workflows = ["validate.yml", "codeql.yml"]
