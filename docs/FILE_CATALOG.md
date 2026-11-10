@@ -22,12 +22,18 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/TESTING.md` — # Test strategy
 - `docs/THIRD_PARTY.md` — # Data and third-party notices
 - `docs/USER_GUIDE.md` — # Using the workbench
+- `docs/handbook.md` — # Orbital Safety Workbench handbook
 - `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
 - `docs/releases/v1.1.0.md` — # Version 1.1.0 — Orbital Safety Workbench
 - `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Illustrative screening-window validation — 2026-11-09
 - `docs/reports/VALIDATION.md` — # Validation record
+- `docs/reports/documentation-refresh-2026-11-09.md` — # Documentation refresh — 2026-11-09
 - `docs/reports/portfolio-sync-2026-10-22.md` — <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. -->
+- `docs/reports/project-guide.docx` — Reviewed Word project guide bound to the documented source revision.
+- `docs/reports/publications.json` — Exact Office publication identities, approved page/tab scopes and immutable source baselines.
+- `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
+- `docs/reports/validation-review.docx` — Reviewed Word validation evidence and explicit test/analysis limitations.
 - `launcher.py` — """Standalone application entry by Jason Stys; main is the documented CLI entry.
 - `licenses/PYTHON.txt` — Warning: truncated output (original token count: 8705)
 - `orbital/__init__.py` — """Bounded civilian science application by Jason Stys.
@@ -54,6 +60,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
+- `tests/test_publication_text.py` — """Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content.
 - `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/test_science.py` — """Numerical/reference/property regression tests by Jason Stys.
 - `tests/test_screening.py` — """Independent linear distance-window geometry by Jason Stys.
@@ -65,6 +72,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
 - `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
 - `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/publication_text.py` — """Jason Stys: inspect only named reviewed Office editions without hiding their XML.
 - `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
 - `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
 - `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.

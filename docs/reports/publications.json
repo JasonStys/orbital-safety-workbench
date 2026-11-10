@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "project": "orbital-safety-workbench",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+  "sourceUrl": "https://github.com/JasonStys/orbital-safety-workbench/tree/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+  "functionalEvidenceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42752800435,
+      "event": "push",
+      "headSha": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800435"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42752800426,
+      "event": "push",
+      "headSha": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/orbital-safety-workbench/actions/runs/42752800426"
+    }
+  ],
+  "summary": "The released 1.1.0 portable workbench includes illustrative distance-window review: inspect exact sampled-history interval bounds, boundary censoring and replay positions while retaining archived ISS/SGP4 evidence and downloadable reports.",
+  "rationale": "The existing civilian historical replay and fictional multi-object tracks remain the purpose. The actual extracted UI is checked against an analytic relative-distance oracle and exact JSON export, with collision probabilities explicitly absent. POSIX-safe archives and newly complete CPython/PyInstaller notices improve distribution without adding operational prediction or guidance.",
+  "limitations": [
+    "Historical ISS data and fictional sampled tracks; no live catalog, covariance, collision probability, targeting or maneuver guidance.",
+    "Distances are illustrative display thresholds rather than operational safety radii.",
+    "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 86702,
+      "sha256": "32d4c77b2bfa550fa56cf667f0dbb9315d7bee1e3880bc5fd19117bdd38f363d",
+      "sourceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "ad932ba7ec2cb5f294a3f6ac43fc102c2e579a03e95f7b95628fd5a1155d3dec",
+          "page-2.png": "b8046b89b3b7cfe228b2e86b5430dfc9201747425f3520fd91c9a9b2c0bf3dc2",
+          "page-3.png": "b37ca051083c99048d4f022475939d48bf4a8c3ef488e93d12278486636855c3",
+          "page-4.png": "b066cc8db01ca0f09ca82d8d95bed02205964449c9d592df81bbad9a3f9084f5"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 43782,
+      "sha256": "5f9947a140161a248192484e2310d97e0e4ad909071052614d1a7e38eafbffa0",
+      "sourceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 4,
+        "renderedPageSha256": {
+          "page-1.png": "20d9bb303121510d70685d8b8e014cad89885f556723dcb470e85a3b354b5a79",
+          "page-2.png": "ebadc607f216eb8c44836eff0040f1da6bf7084ea19b3767e5d08da3d6e04525",
+          "page-3.png": "c98a8d18585297332d30801e4325b95d860ec43ecf56fe8fb7964d866cffa7d5",
+          "page-4.png": "073a2380224c8bc6e2c95c672b8a0de84b4ac3012107eee22888520397b881f3"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7352,
+      "sha256": "7cc31b5ecf47e1492203689aca3425f9488d1ddf0507e221deb556c961a434b7",
+      "sourceBaseline": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Test sources", "Workflow evidence"],
+        "previewSha256": {
+          "Workflow evidence": "3386653148cf07c85fa60056b60a24d99c7c10655fe982bd6af097f1cd3de2e2",
+          "Test sources": "2bd16d9d4655acdfdf5daa9f2c8030aaed45c16b837f8b7946272e54891ceb32"
+        },
+        "tables": [
+          {
+            "path": "xl/tables/table1.xml",
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "columns": 4,
+            "autoFilter": true,
+            "filterButtonsEnabled": true
+          },
+          {
+            "path": "xl/tables/table2.xml",
+            "name": "TestSources",
+            "range": "A7:C17",
+            "columns": 3,
+            "autoFilter": true,
+            "filterButtonsEnabled": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": []
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}

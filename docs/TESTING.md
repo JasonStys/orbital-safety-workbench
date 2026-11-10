@@ -17,7 +17,7 @@
 
 Tests distinguish numerical verification, browser behavior, packaging and physical validity. Passing them does not validate current orbital positions or certify a safety product. Browser WebGL availability varies by host; fallback is part of the design. Automated accessibility testing does not replace assistive-technology user testing.
 
-CI emits results to logs; it does not upload Actions artifacts or create Actions caches. Native ZIPs are uploaded only to a **draft GitHub Release** after a manually dispatched packaging workflow. Reports in `docs/reports/` record exact observed runs, environments, failures/remediations and residual limits. No result is called passed merely because a workflow file exists.
+CI emits results to logs; it does not upload Actions artifacts or create Actions caches. Native archives are uploaded only to a **draft GitHub Release** after a manually dispatched packaging workflow. Reports in `docs/reports/` record exact observed runs, environments, failures/remediations and residual limits. No result is called passed merely because a workflow file exists.
 
 ## Performance interpretation
 

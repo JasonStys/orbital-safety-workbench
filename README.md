@@ -35,7 +35,7 @@ python -m orbital serve
 
 The service binds **only `127.0.0.1`** on an available port and opens your default browser. Keep its terminal open; Ctrl+C stops it. The browser view is responsive on small screens, but the local server runs on a desktop computer. It is not a public hosted website or a mobile-native installer.
 
-Portable desktop bundles, when published, appear in [Releases](https://github.com/JasonStys/orbital-safety-workbench/releases). Extract the entire ZIP and launch `OrbitalSafetyWorkbench` (`.exe` on Windows). No Node/Python installation is needed for a bundle. These are **unsigned portable applications**, not notarized installers; do not bypass OS security warnings. See [installation and verification](docs/USER_GUIDE.md).
+The [v1.1.0 portable release](https://github.com/JasonStys/orbital-safety-workbench/releases/tag/v1.1.0) provides Windows x64 ZIP and Linux x64/macOS ARM64 `.tar.gz` archives with matching `.sha256` files. Verify the digest, extract the **entire archive** with its `_internal` folder and licenses, preserve POSIX links/permissions, then launch `OrbitalSafetyWorkbench` (`.exe` on Windows). No Node/Python installation is needed for a bundle. These are **unsigned portable applications**, not notarized installers; do not bypass OS security warnings. See [installation and verification](docs/USER_GUIDE.md).
 
 ## Evidence without the UI
 
@@ -104,6 +104,12 @@ python tools/package_app.py
 
 MIT-licensed source; see [third-party notices](docs/THIRD_PARTY.md). No affiliation with a space agency or government organization is implied.
 
-## Current portable release preparation
+## Current portable release
 
 Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.
