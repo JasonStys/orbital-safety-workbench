@@ -50,6 +50,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `requirements.lock` — Universal pinned Python runtime graph with approved distribution hashes.
 - `tests/display.test.ts` — /** Pure display contract tests by Jason Stys.
 - `tests/test_docs.py` — """Cross-platform generated-documentation regression tests by Jason Stys.
+- `tests/test_draft_lookup.py` — """Independent real-shape draft API contract fixtures by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
@@ -57,6 +58,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_science.py` — """Numerical/reference/property regression tests by Jason Stys.
 - `tests/test_screening.py` — """Independent linear distance-window geometry by Jason Stys.
 - `tests/ui.spec.ts` — /** End-user production-server tests by Jason Stys.
+- `tools/draft_lookup.py` — """Bounded authenticated draft lookup by Jason Stys.
 - `tools/legacy_smoke.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
 - `tools/native_browser.mjs` — /**
 - `tools/native_feature_smoke.mjs` — /** Jason Stys — actual extracted civilian distance-window review and downloaded evidence.
