@@ -4,4 +4,6 @@ Functions/classes: none; VERSION is the report schema's application release.
 Line locations and variable declarations: docs/CODE_INDEX.md.
 """
 
-VERSION = "1.0.0"
+__version__ = "1.1.0"
+
+VERSION = __version__

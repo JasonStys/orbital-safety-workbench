@@ -26,7 +26,7 @@ SKIP = {
     "test-results",
     "playwright-report",
 }
-SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql"}
+SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql"}
 FILE_PURPOSES = {
     ".gitattributes": "Normalize source text to LF and preserve binary screenshot assets.",
     ".gitignore": "Exclude dependencies, runtime/private data, histories and generated builds from Git.",

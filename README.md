@@ -103,3 +103,7 @@ python tools/package_app.py
 - Author/contact: [Jason Stys](https://github.com/JasonStys), [project issues](https://github.com/JasonStys/orbital-safety-workbench/issues). Please do not post private security information in public issues; use GitHub private vulnerability reporting when available.
 
 MIT-licensed source; see [third-party notices](docs/THIRD_PARTY.md). No affiliation with a space agency or government organization is implied.
+
+## Current portable release preparation
+
+Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.

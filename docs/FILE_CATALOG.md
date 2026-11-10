@@ -15,7 +15,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `README.md` — # Orbital Safety Workbench
 - `SECURITY.md` — # Security reporting
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
-- `docs/RELEASE.md` — # Release and rollback runbook
+- `docs/RELEASE.md` — # Release, operation and rollback
 - `docs/SCIENCE.md` — # Scientific method, provenance and limits
 - `docs/SCREENING_WINDOWS.md` — # Inspect illustrative distance windows
 - `docs/SECURITY.md` — # Security and privacy model
@@ -23,13 +23,17 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/THIRD_PARTY.md` — # Data and third-party notices
 - `docs/USER_GUIDE.md` — # Using the workbench
 - `docs/images/workbench.jpg` — Binary screenshot asset from local application validation
+- `docs/releases/v1.1.0.md` — # Version 1.1.0 — Orbital Safety Workbench
+- `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Illustrative screening-window validation — 2026-11-09
 - `docs/reports/VALIDATION.md` — # Validation record
 - `docs/reports/portfolio-sync-2026-10-22.md` — <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. -->
 - `launcher.py` — """Standalone application entry by Jason Stys; main is the documented CLI entry.
+- `licenses/PYTHON.txt` — Warning: truncated output (original token count: 8705)
 - `orbital/__init__.py` — """Bounded civilian science application by Jason Stys.
 - `orbital/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `orbital/model.py` — """Immutable units/frame/sample contracts and bounded interpolation by Jason Stys.
+- `orbital/package_info.py` — """Read bounded frozen-build identity by Jason Stys, never a user-profile configuration.
 - `orbital/reports.py` — """Portable JSON/CSV/HTML evidence and transactional history by Jason Stys.
 - `orbital/resources/history.sql` — -- Immutable local run evidence by Jason Stys. No identities, credentials or telemetry.
 - `orbital/resources/iss-2024.json` — Reviewed public historical ISS OMM fixture at its May 2024 UTC epoch.
@@ -47,13 +51,21 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/display.test.ts` — /** Pure display contract tests by Jason Stys.
 - `tests/test_docs.py` — """Cross-platform generated-documentation regression tests by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
+- `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
+- `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
+- `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/test_science.py` — """Numerical/reference/property regression tests by Jason Stys.
 - `tests/test_screening.py` — """Independent linear distance-window geometry by Jason Stys.
 - `tests/ui.spec.ts` — /** End-user production-server tests by Jason Stys.
-- `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
-- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
-- `tools/smoke_app.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
-- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/legacy_smoke.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
+- `tools/native_browser.mjs` — /**
+- `tools/native_feature_smoke.mjs` — /** Jason Stys — actual extracted civilian distance-window review and downloaded evidence.
+- `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
+- `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
+- `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
+- `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
+- `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
 - `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
 - `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
 - `vitest.config.ts` — /** Unit-test routing by Jason Stys. Function: defineConfig. Variable: include isolates pure display tests.
