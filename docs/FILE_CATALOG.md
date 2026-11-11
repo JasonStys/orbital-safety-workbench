@@ -29,12 +29,17 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # Illustrative screening-window validation — 2026-11-09
 - `docs/reports/VALIDATION.md` — # Validation record
 - `docs/reports/documentation-refresh-2026-11-09.md` — # Documentation refresh — 2026-11-09
+- `docs/reports/installed-windows-2026-11-10.md` — # Installed Windows application validation — 10 November 2026
 - `docs/reports/portfolio-sync-2026-10-22.md` — <!-- File: docs/reports/portfolio-sync-2026-10-22.md; Purpose: reviewed integration and validation trail by Jason Stys. -->
 - `docs/reports/project-guide.docx` — Reviewed Word project guide bound to the documented source revision.
 - `docs/reports/publication-package-boundary-2026-11-10.md` — # Reviewed Office package boundary — November 10, 2026
 - `docs/reports/publications.json` — Exact Office publication identities, approved page/tab scopes and immutable source baselines.
 - `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
 - `docs/reports/validation-review.docx` — Reviewed Word validation evidence and explicit test/analysis limitations.
+- `docs/reports/windows-application-guide.docx` — Individually reviewed installed-app guide with real screenshots, worked workflow, source excerpts and operating limits.
+- `docs/reports/windows-application-guide.json` — Exact illustrated-guide, screenshot and rendered-page identities plus bounded validation observations.
+- `docs/screenshots/windows-application/01-screening-window-focused.png` — Binary screenshot asset from local application validation
+- `docs/screenshots/windows-application/02-historical-iss.png` — Binary screenshot asset from local application validation
 - `launcher.py` — """Standalone application entry by Jason Stys; main is the documented CLI entry.
 - `licenses/PYTHON.txt` — Warning: truncated output (original token count: 8705)
 - `orbital/__init__.py` — """Bounded civilian science application by Jason Stys.

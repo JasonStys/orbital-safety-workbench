@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "repository": "orbital-safety-workbench",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "89278b3a1997c3b4ab3f4b7acc81672a87a5f22e",
+  "createdAt": "2026-11-11T00:53:39.308Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "00e41f2fa00bd4da58c3f18dd95555998db0f866ea77c401f012f221bbf8b8cb",
+  "screenshots": [
+    {
+      "file": "01-screening-window-focused.png",
+      "sha256": "fec980208cc6d1a63b77119a1b36ac7b460bffab77b1a1fa3732f0e7ebf157c7",
+      "width": 588,
+      "height": 177,
+      "caption": "Visible portion of the selected 1 km teaching window: Demo A/B, 782\u20131032 seconds, 250 seconds total. The full nine-window contract was validated separately; these are illustrative distances, not safety radii or collision probabilities."
+    },
+    {
+      "file": "02-historical-iss.png",
+      "sha256": "652964514d120c165c3935ae5dc232181923ac9daca68278da445e201c6d80e2",
+      "width": 957,
+      "height": 587,
+      "caption": "Actual installed application showing frozen historical iss frame. Captured during the accepted native user journey with prepared synthetic inputs."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "orbital/screening.py",
+      "first": 41,
+      "last": 62,
+      "sha256": "4ff01acd36818ec1c41422ab12989324c4d0e6f90a6e9e5d56a8895e62467cb4",
+      "url": "https://github.com/JasonStys/orbital-safety-workbench/blob/89278b3a1997c3b4ab3f4b7acc81672a87a5f22e/orbital/screening.py#L41"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "Nine sampled screening windows were retained; the narrow example spans 782 to 1032 seconds. The frozen historical view retained its TEME frame and no invented windows.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:38:59.259909+00:00",
+    "reviewers": ["root", "audit_apps"],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "52bafe34329c0fb362a4b63c83d71ed46a03d7f0c6ce5edb2bd2fee20a40a234",
+      "2": "7c5965e9d9b91ed0057ba1b482db392cae59327ab0030dc060e7ff09fa302207",
+      "3": "2378777aa3a8854b9e8c05dae708ffe12742141ce3a649d187fdfa471a41438a",
+      "4": "c256c1ca1d6bbfd9597ee5a191ced43f5621ab013cfce89f0f1f48632ef251a7"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}
